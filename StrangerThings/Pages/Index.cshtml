@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<hr />
+<form method="post">
+	<button type="submit">In</button>
+</form>
+<div>
+	@foreach (var cl in User.Claims)
+	{
+		<p>@($"{cl.Type}:{cl.Value}")</p>
+	}
+</div>
+<hr />
+<p>Now @DateTime.Now.ToLongTimeString()</p>
+@{
+	var gg = HttpContext.Features.Get<Govno>();
+	<p>Pub @gg?.Pub</p>
+	<p>Exp @gg?.Exp</p>
+}
