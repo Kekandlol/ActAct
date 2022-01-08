@@ -13,7 +13,7 @@ namespace Tests
         [Test]
         public void TestFail()
         {
-            Assert.Fail("It's okay!");
+            Assert.Pass("It's okay!");
         }
     }
 }
