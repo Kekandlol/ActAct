@@ -40,7 +40,7 @@ namespace Tests
             ConfigurationBuilder configurationBuilder = new();
             configurationBuilder.AddEnvironmentVariables();
             var cfg = configurationBuilder.Build();
-            Assert.NotNull(cfg["CONS"]);
+            Assert.NotNull(cfg["TestsDb"]);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace Tests
             ConfigurationBuilder configurationBuilder = new();
             configurationBuilder.AddEnvironmentVariables();
             var cfg = configurationBuilder.Build();
-            var cons = cfg["CONS"];
+            var cons = cfg.GetConnectionString("TestsDb");
             Assert.NotNull(cons);
 
             DbContextOptionsBuilder builder = new DbContextOptionsBuilder();

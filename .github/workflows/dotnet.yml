@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      CONS: Host=localhost;Port=5432;Database=Pook;Username=postgres;Password=postgres
+      ConnectionStrings__TestsDb: Host=localhost;Port=5432;Database=Pook;Username=postgres;Password=postgres
       
     services:
       # Label used to access the service container
