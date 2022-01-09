@@ -44,16 +44,17 @@ namespace Tests
             StringAssert.AreEqualIgnoringCase("correct", cfg["CONS"]);
         }
 
+        [Test]
         public void DbConnectionTest()
         {
             ConfigurationBuilder configurationBuilder = new();
             configurationBuilder.AddEnvironmentVariables();
             var cfg = configurationBuilder.Build();
-
+            var cons = cfg["CONS"];
+            Assert.NotNull(cons);
 
             DbContextOptionsBuilder builder = new DbContextOptionsBuilder();
-            // builder.UseNpgsql("Host=localhost;Port=5432;Database=Pook;Username=oak;Password=oakpassword");
-            builder.UseNpgsql(cfg["Cons"]);
+            builder.UseNpgsql(cons);
             using Contex contex = new Contex(builder.Options);
             Assert.DoesNotThrow(() => contex.Database.EnsureDeleted());
             Assert.DoesNotThrow(contex.Database.Migrate);
