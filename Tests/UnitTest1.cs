@@ -40,7 +40,7 @@ namespace Tests
             ConfigurationBuilder configurationBuilder = new();
             configurationBuilder.AddEnvironmentVariables();
             var cfg = configurationBuilder.Build();
-            Assert.NotNull(cfg["TestsDb"]);
+            Assert.NotNull(cfg.GetConnectionString("TestsDb"));
         }
 
         [Test]
