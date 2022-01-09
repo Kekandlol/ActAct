@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Tests": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Cons": "Host=localhost;Port=5432;Database=Booo;Username=oak;Password=oakpassword"
+      }
+    }
+  }
+}
