@@ -1,16 +1,12 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.EntityFrameworkCore;
 using StrangerThings;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Logging.AddConsole().AddDebug();
-
-builder.Host.ConfigureLogging(logging =>
-{
-    logging.AddConsole().AddDebug();
-});
 
 // Add services to the container.
+builder.Services.AddDbContext<Contex>(x=>x.UseNpgsql(builder.Configuration["cons"]));
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<CookieValidator>();
 //builder.Services.AddScoped<IDataProtectionProvider, ProtectorProv>();

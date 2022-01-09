@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -10,12 +10,13 @@
   "profiles": {
     "StrangerThings": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5144",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Cons": "Host=localhost;Port=5432;Database=Booo;Username=oak;Password=oakpassword"
+      },
+      "applicationUrl": "http://localhost:5144",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
