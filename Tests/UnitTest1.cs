@@ -40,7 +40,6 @@ namespace Tests
             ConfigurationBuilder configurationBuilder = new();
             configurationBuilder.AddEnvironmentVariables();
             var cfg = configurationBuilder.Build();
-
             Assert.NotNull(cfg["CONS"]);
         }
 
